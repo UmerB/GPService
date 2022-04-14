@@ -1,0 +1,60 @@
+@extends('layouts.app')
+
+@section('content')
+<div class = "container">
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+    <form method="POST" action ="{{route('requests.store')}}">
+        @csrf 
+        <div class="form-group row">
+
+            <div class="col-sm-10">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="title" class="form-label mt-4">Medication required:</label>
+            <input type="text" class="form-control" name = "title" value="{{old('title')}}">
+            
+        </div>
+        <div class="form-group">
+            <label for="body" class="form-label mt-4">Message:</label>
+            <input type="text" class="form-control" name="body" value="{{old('body')}}">
+        </div>
+        <div class = "btn btn-primary">
+            <input type="submit" value="Submit">
+        </div>
+
+        <a href="{{route('requests.index')}}">
+            <button type="button" class="btn btn-warning">Cancel</button>
+          </a> 
+    </form>
+    </div>
+    </div>
+    </div>
+@endsection
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
